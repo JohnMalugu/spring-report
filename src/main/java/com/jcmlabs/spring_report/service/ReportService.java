@@ -1,6 +1,7 @@
 package com.jcmlabs.spring_report.service;
 
 import com.jcmlabs.spring_report.dtos.EmployeeDto;
+import com.jcmlabs.spring_report.repositories.EmployeeRepository;
 import com.jcmlabs.spring_report.utils.JasperReportsUtil;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
