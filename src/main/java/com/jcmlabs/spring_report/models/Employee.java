@@ -15,6 +15,4 @@ public class Employee {
     private Double salary;
 }
 
-// EmployeeDto.java
-
 
