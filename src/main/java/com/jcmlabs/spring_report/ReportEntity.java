@@ -1,5 +1,5 @@
 package com.jcmlabs.spring_report;
 
-public class ReportEnity {
+public class ReportEntity {
     private String test;
 }
