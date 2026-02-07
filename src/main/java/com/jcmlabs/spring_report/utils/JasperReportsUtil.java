@@ -1,5 +1,20 @@
 package com.jcmlabs.spring_report.utils;
 
+import com.jcmlabs.spring_report.enums.ReportTypeEnum;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.export.JRRtfExporter;
+import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimpleWriterExporterOutput;
+import org.springframework.stereotype.Component;
+
+import java.io.ByteArrayOutputStream;
+
+import static org.apache.poi.hpsf.ClassIDPredefined.PDF;
+
 @Component
 public class JasperReportsUtil {
 
