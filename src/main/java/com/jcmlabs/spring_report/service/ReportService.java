@@ -2,6 +2,7 @@ package com.jcmlabs.spring_report.service;
 
 import com.jcmlabs.spring_report.dtos.EmployeeDto;
 import com.jcmlabs.spring_report.enums.ReportTypeEnum;
+import com.jcmlabs.spring_report.models.Employee;
 import com.jcmlabs.spring_report.repositories.EmployeeRepository;
 import com.jcmlabs.spring_report.utils.JasperReportsUtil;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +30,8 @@ public class ReportService {
     private final JasperReportsUtil jasperReportsUtil;
 
     public byte[] generateEmployeeReport(String fileType) throws Exception {
+
+        List<Employee> employees = employeeRepository.findAll().stream().map(employee -> new Employee(employee.getId(),employee.getName(),employee.getCity(),employee.getSalary())).toList();
         List<EmployeeDto> data = employeeRepository.findAll()
                 .stream()
                 .map(e -> new EmployeeDto(e.getId(), e.getName(), e.getCity(), e.getSalary()))
