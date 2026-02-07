@@ -24,10 +24,9 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ReportService {
 
-    private EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
 
-    @Autowired
-    private JasperReportsUtil jasperReportsUtil;
+    private final JasperReportsUtil jasperReportsUtil;
 
     public byte[] generateEmployeeReport(String fileType) throws Exception {
         List<EmployeeDto> data = employeeRepository.findAll()
