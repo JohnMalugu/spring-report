@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
 
-import static org.apache.poi.hpsf.ClassIDPredefined.PDF;
 
 @Component
 public class JasperReportsUtil {
