@@ -4,6 +4,7 @@ import com.jcmlabs.spring_report.dtos.EmployeeDto;
 import com.jcmlabs.spring_report.enums.ReportTypeEnum;
 import com.jcmlabs.spring_report.repositories.EmployeeRepository;
 import com.jcmlabs.spring_report.utils.JasperReportsUtil;
+import lombok.RequiredArgsConstructor;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -20,9 +21,9 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@RequiredArgsConstructor
 public class ReportService {
 
-    @Autowired
     private EmployeeRepository employeeRepository;
 
     @Autowired
