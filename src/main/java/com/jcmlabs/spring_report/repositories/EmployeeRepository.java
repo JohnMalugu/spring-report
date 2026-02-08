@@ -1,6 +1,5 @@
 package com.jcmlabs.spring_report.repositories;
 
-import com.jcmlabs.spring_report.dtos.EmployeeDto;
 import com.jcmlabs.spring_report.models.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
