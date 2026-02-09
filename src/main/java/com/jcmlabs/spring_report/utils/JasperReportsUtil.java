@@ -1,6 +1,7 @@
 package com.jcmlabs.spring_report.utils;
 
 import com.jcmlabs.spring_report.enums.ReportTypeEnum;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
 
-
+@Slf4j
 @Component
 public class JasperReportsUtil {
 
