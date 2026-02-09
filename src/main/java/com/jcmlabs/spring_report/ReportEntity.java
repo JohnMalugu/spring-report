@@ -1,5 +1,6 @@
 package com.jcmlabs.spring_report;
 
+import com.jcmlabs.spring_report.shared.entities.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,7 @@ import org.hibernate.annotations.SoftDelete;
 @NoArgsConstructor
 @AllArgsConstructor
 @SoftDelete
-public class ReportEntity {
+public class ReportEntity extends BaseEntity {
     private String test;
     private String description;
 }
