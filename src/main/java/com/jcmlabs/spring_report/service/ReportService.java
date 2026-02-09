@@ -31,6 +31,7 @@ public class ReportService {
     private final JasperReportsUtil jasperReportsUtil;
 
     public byte[] generateEmployeeReport(String fileType) throws Exception {
+        log.info("Preparing to generate report");
 
         List<EmployeeDto> data = employeeRepository.findAll()
                 .stream()
