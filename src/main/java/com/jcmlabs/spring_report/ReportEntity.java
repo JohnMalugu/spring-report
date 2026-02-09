@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.SoftDelete;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "report")
 @Getter
@@ -16,7 +18,7 @@ import org.hibernate.annotations.SoftDelete;
 @NoArgsConstructor
 @AllArgsConstructor
 @SoftDelete
-public class ReportEntity extends BaseEntity {
+public class ReportEntity extends BaseEntity implements Serializable {
     private String test;
     private String description;
 }
