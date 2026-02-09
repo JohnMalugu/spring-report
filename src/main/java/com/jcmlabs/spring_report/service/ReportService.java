@@ -51,6 +51,7 @@ public class ReportService {
         JasperReport jasperReport = JasperCompileManager.compileReport(
                 ResourceUtils.getFile("classpath:reports/emp24.jrxml").getAbsolutePath()
         );
+        log.info("Generating report");
 
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         return jasperReportsUtil.exportJasperReportBytes(jasperPrint, ReportTypeEnum.valueOf(fileType));
