@@ -17,4 +17,5 @@ import org.hibernate.annotations.SoftDelete;
 @SoftDelete
 public class ReportEntity {
     private String test;
+    private String description;
 }
