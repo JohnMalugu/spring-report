@@ -30,7 +30,6 @@ public class ReportService {
 
     public byte[] generateEmployeeReport(String fileType) throws Exception {
 
-        List<Employee> employees = employeeRepository.findAll().stream().map(employee -> new Employee(employee.getId(),employee.getName(),employee.getCity(),employee.getSalary())).toList();
         List<EmployeeDto> data = employeeRepository.findAll()
                 .stream()
                 .map(e -> new EmployeeDto(e.getId(), e.getName(), e.getCity(), e.getSalary()))
