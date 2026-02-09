@@ -6,6 +6,7 @@ import com.jcmlabs.spring_report.models.Employee;
 import com.jcmlabs.spring_report.repositories.EmployeeRepository;
 import com.jcmlabs.spring_report.utils.JasperReportsUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ReportService {
