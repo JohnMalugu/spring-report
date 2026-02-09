@@ -45,6 +45,8 @@ public class ReportService {
         parameters.put("createdBy", "Your Name");
         parameters.put("logo", new FileInputStream(new File("src/main/resources/reports/logo.jpg")));
 
+        log.info("parameters created");
+
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
         JasperReport jasperReport = JasperCompileManager.compileReport(
                 ResourceUtils.getFile("classpath:reports/emp24.jrxml").getAbsolutePath()
