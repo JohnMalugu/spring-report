@@ -5,6 +5,5 @@ import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
 @Entity
-
 public class BaseEntity {
 }
