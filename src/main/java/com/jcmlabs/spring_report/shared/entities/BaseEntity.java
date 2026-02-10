@@ -10,4 +10,7 @@ import java.time.LocalDateTime;
 public class BaseEntity {
     private LocalDateTime createdAt;
     private Long createdBy;
+
+    private LocalDateTime updatedBy;
+
 }
