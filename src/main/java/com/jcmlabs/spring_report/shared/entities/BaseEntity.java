@@ -15,5 +15,6 @@ public class BaseEntity {
     private Long updatedBy;
 
     private String uuid;
+    private Long id;
 
 }
