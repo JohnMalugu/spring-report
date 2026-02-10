@@ -14,5 +14,6 @@ public class BaseEntity {
     private LocalDateTime updatedAt;
     private Long updatedBy;
 
+    private String uuid;
 
 }
