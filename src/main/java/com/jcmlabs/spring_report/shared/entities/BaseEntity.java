@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @Entity
 public class BaseEntity {
+
     private LocalDateTime createdAt;
     private Long createdBy;
 
