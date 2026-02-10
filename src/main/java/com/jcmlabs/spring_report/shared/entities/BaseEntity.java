@@ -1,13 +1,16 @@
 package com.jcmlabs.spring_report.shared.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @MappedSuperclass
 @Entity
 public class BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private LocalDateTime createdAt;
     private Long createdBy;
@@ -16,6 +19,5 @@ public class BaseEntity {
     private Long updatedBy;
 
     private String uuid;
-    private Long id;
 
 }
