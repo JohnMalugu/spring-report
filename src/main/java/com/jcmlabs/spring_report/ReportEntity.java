@@ -18,7 +18,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @SoftDelete
-public class ReportEntity extends BaseEntity implements Serializable {
+public class ReportEntity extends BaseEntity {
     private String test;
     private String description;
 }
