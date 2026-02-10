@@ -9,4 +9,5 @@ import java.time.LocalDateTime;
 @Entity
 public class BaseEntity {
     private LocalDateTime createdAt;
+    private Long createdBy;
 }
