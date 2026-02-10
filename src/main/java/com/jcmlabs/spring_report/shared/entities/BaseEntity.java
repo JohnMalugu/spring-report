@@ -1,12 +1,14 @@
 package com.jcmlabs.spring_report.shared.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @MappedSuperclass
 @Entity
+@Getter
 public class BaseEntity {
 
     @Id
