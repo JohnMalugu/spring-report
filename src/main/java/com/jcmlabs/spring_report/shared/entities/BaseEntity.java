@@ -11,8 +11,6 @@ import java.util.UUID;
 @MappedSuperclass
 @Entity
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class BaseEntity {
 
     @Id
