@@ -13,7 +13,7 @@ import org.hibernate.annotations.SoftDelete;
 @Table(name = "employee")
 @SoftDelete
 @AllArgsConstructor
-public class Employee {
+public class Employee extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
