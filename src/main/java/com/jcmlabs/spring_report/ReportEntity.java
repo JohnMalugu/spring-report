@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.SoftDelete;
 
-import java.io.Serializable;
-
 @Entity
 @Table(name = "report")
 @Getter
