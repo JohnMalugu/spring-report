@@ -1,6 +1,7 @@
 package com.jcmlabs.spring_report.shared.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -9,6 +10,7 @@ import java.util.UUID;
 @MappedSuperclass
 @Entity
 @Getter
+@AllArgsConstructor
 public class BaseEntity {
 
     @Id
