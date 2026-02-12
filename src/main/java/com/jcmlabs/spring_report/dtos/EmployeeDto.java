@@ -8,5 +8,8 @@ public record EmployeeDto(
         @NotBlank(message = "Name is required")
         @Size(max = 255)
         String name,
+
+        @Size(max = 50)
         String city,
+
         Double salary) {}
