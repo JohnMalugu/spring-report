@@ -2,12 +2,16 @@ package com.jcmlabs.spring_report.shared.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @MappedSuperclass
 @Getter
+@Setter
+@NoArgsConstructor
 public class BaseEntity {
 
     @Id
