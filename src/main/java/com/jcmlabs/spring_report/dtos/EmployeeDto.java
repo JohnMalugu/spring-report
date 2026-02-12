@@ -1,5 +1,8 @@
 package com.jcmlabs.spring_report.dtos;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public record EmployeeDto(
         Long id,
 
