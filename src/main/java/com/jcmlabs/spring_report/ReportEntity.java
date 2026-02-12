@@ -1,5 +1,7 @@
 package com.jcmlabs.spring_report;
 
+import com.jcmlabs.spring_report.shared.entities.BaseEntity;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
