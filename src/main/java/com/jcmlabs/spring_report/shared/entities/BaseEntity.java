@@ -22,6 +22,7 @@ public abstract class BaseEntity {
     @Column(unique = true)
     private String uuid;
 
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
     private Long createdBy;
     private LocalDateTime updatedAt;
