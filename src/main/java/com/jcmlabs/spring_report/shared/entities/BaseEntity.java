@@ -22,7 +22,7 @@ public class BaseEntity {
     private Long id;
 
     @Column(unique = true)
-    private String uuid; // Removed assignment here to let Builder handle it
+    private String uuid;
 
     private LocalDateTime createdAt;
     private Long createdBy;
