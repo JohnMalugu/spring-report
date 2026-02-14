@@ -30,5 +30,7 @@ public abstract class BaseEntity {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @Column(name = "updated_by")
     private Long updatedBy;
 }
