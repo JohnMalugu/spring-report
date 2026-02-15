@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @MappedSuperclass
 @Getter
@@ -18,7 +19,7 @@ public abstract class BaseEntity {
     private Long id;
 
     @Column(unique = true)
-    private String uuid;
+    private String uuid = UUID.randomUUID().toString();
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
