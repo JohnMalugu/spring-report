@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 public record EmployeeDto(
+
+        Long id,
         String uuid,
 
         @NotBlank(message = "Name is required")
