@@ -7,7 +7,6 @@ import jakarta.validation.constraints.Size;
 
 public record EmployeeDto(
         String uuid,
-        @NotBlank(message = "Name is required")
 
         @NotBlank(message = "Name is required")
         @Size(min = 2, max = 255, message = "Name must be between 2 and 255 characters")
