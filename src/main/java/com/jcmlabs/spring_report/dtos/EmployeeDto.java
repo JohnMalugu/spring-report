@@ -7,16 +7,11 @@ import jakarta.validation.constraints.Size;
 
 public record EmployeeDto(
 
-        Long id,
-        String uuid,
+        Long id, String uuid,
 
-        @NotBlank(message = "Name is required")
-        @Size(min = 2, max = 255, message = "Name must be between 2 and 255 characters")
-        String name,
+        @NotBlank(message = "Name is required") @Size(min = 2, max = 255, message = "Name must be between 2 and 255 characters") String name,
 
-        @Size(max = 50)
-        String city,
+        @Size(max = 50) String city,
 
-        @NotNull(message = "Salary is required")
-        @Positive(message = "Salary must be greater than zero")
-        Double salary) {}
+        @NotNull(message = "Salary is required") @Positive(message = "Salary must be greater than zero") Double salary) {
+}
