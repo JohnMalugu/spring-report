@@ -1,10 +1,12 @@
 package com.jcmlabs.spring_report.controllers;
 
+import com.jcmlabs.spring_report.enums.ReportTypeEnum;
 import com.jcmlabs.spring_report.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,16 +21,17 @@ public class ReportController {
     @Autowired
     private ReportService reportService;
 
-    @GetMapping("/employee")
-    public ResponseEntity<Resource> downloadEmployeeReport(@RequestParam String fileType) throws Exception {
-        byte[] reportBytes = reportService.generateEmployeeReport(fileType.toUpperCase());
-        ByteArrayResource resource = new ByteArrayResource(reportBytes);
+    @GetMapping("/download")
+    public ResponseEntity<byte[]> downloadReport(@RequestParam ReportTypeEnum type) throws Exception {
+        byte[] report = reportService.generateEmployeeReport(type);
 
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=employee_report." + fileType.toLowerCase())
-                .contentLength(resource.contentLength())
-                .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .body(resource);
+        // Set headers for download
+        HttpHeaders headers = new HttpHeaders();
+        String filename = "employees." + type.name().toLowerCase();
+        headers.setContentDispositionFormData("attachment", filename);
+        headers.setContentType(type == ReportTypeEnum.PDF ? MediaType.APPLICATION_PDF : MediaType.APPLICATION_OCTET_STREAM);
+
+        return new ResponseEntity<>(report, headers, HttpStatus.OK);
     }
 }
 
