@@ -2,21 +2,18 @@ package com.jcmlabs.spring_report.service;
 
 import com.jcmlabs.spring_report.dtos.EmployeeDto;
 import com.jcmlabs.spring_report.enums.ReportTypeEnum;
-import com.jcmlabs.spring_report.models.Employee;
 import com.jcmlabs.spring_report.repositories.EmployeeRepository;
 import com.jcmlabs.spring_report.utils.JasperReportsUtil;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,34 +24,51 @@ import java.util.Map;
 public class ReportService {
 
     private final EmployeeRepository employeeRepository;
-
     private final JasperReportsUtil jasperReportsUtil;
 
-    public byte[] generateEmployeeReport(String fileType) throws Exception {
-        log.info("Preparing to generate report");
+    // Cache the compiled report to avoid recompiling on every request
+    private JasperReport cachedJasperReport;
 
+    @PostConstruct
+    public void init() {
+        // Pre-compile the report at startup
+        try {
+            ClassPathResource reportResource = new ClassPathResource("reports/emp24.jrxml");
+            try (InputStream inputStream = reportResource.getInputStream()) {
+                this.cachedJasperReport = JasperCompileManager.compileReport(inputStream);
+            }
+            log.info("Jasper Report compiled successfully.");
+        } catch (Exception e) {
+            log.error("Failed to compile Jasper Report", e);
+            throw new RuntimeException("Could not compile report template", e);
+        }
+    }
+
+    public byte[] generateEmployeeReport(ReportTypeEnum reportType) throws JRException, IOException {
+        log.info("Preparing to generate {} report", reportType);
+
+        // Fetch data (Consider Spring Data Projections if this list gets large)
         List<EmployeeDto> data = employeeRepository.findAll()
                 .stream()
-                .map(e -> new EmployeeDto(e.getId(), e.getName(), e.getCity(), e.getSalary()))
+                .map(e -> new EmployeeDto(e.getId(), e.getUuid(), e.getName(), e.getCity(), e.getSalary()))
                 .toList();
+
+        // Load logo safely from Classpath
+        ClassPathResource imgResource = new ClassPathResource("reports/logo.jpg");
 
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("comanyName", "BLACK STAR TECHNOLOGIES");
         parameters.put("address", "HITEC City, Hyderabad");
         parameters.put("header", "Employees Salary Report");
-        parameters.put("createdBy", "Your Name");
-        parameters.put("logo", new FileInputStream(new File("src/main/resources/reports/logo.jpg")));
-
-        log.info("parameters created");
+        parameters.put("createdBy", "System Admin");
+        // Pass InputStream, not File, for images in JARs
+        parameters.put("logo", imgResource.getInputStream());
 
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
-        JasperReport jasperReport = JasperCompileManager.compileReport(
-                ResourceUtils.getFile("classpath:reports/emp24.jrxml").getAbsolutePath()
-        );
-        log.info("Generating report");
 
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
-        return jasperReportsUtil.exportJasperReportBytes(jasperPrint, ReportTypeEnum.valueOf(fileType));
+        log.info("Filling report...");
+        JasperPrint jasperPrint = JasperFillManager.fillReport(cachedJasperReport, parameters, dataSource);
+
+        return jasperReportsUtil.exportJasperReportBytes(jasperPrint, reportType);
     }
 }
-
