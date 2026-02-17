@@ -62,7 +62,7 @@ public class ReportService {
         parameters.put("header", "Employees Salary Report");
         parameters.put("createdBy", "System Admin");
         // Pass InputStream, not File, for images in JARs
-        parameters.put("logo", /*imgResource.getInputStream()*/null);
+        parameters.put("logo", /*imgResource.getInputStream()*/);
 
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
 
