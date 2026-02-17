@@ -54,7 +54,7 @@ public class ReportService {
                 .toList();
 
         // Load logo safely from Classpath
-        ClassPathResource imgResource = new ClassPathResource("reports/logo.jpg");
+        ClassPathResource imgResource = new ClassPathResource("templates/logo.jpg");
 
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("comanyName", "JCMLabs | Digital Innovations");
