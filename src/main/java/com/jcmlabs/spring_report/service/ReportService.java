@@ -57,7 +57,7 @@ public class ReportService {
         ClassPathResource imgResource = new ClassPathResource("reports/logo.jpg");
 
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("comanyName", "BLACK STAR TECHNOLOGIES");
+        parameters.put("comanyName", "JCMLabs | Digital Innovations");
         parameters.put("address", "HITEC City, Hyderabad");
         parameters.put("header", "Employees Salary Report");
         parameters.put("createdBy", "System Admin");
