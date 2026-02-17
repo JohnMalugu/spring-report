@@ -1,0 +1,55 @@
+<jasperReport name="emp24" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d29acd7-4003-400c-bbd7-e2ac8c357fb2">
+    <parameter name="companyName" class="java.lang.String"/>
+    <parameter name="header" class="java.lang.String"/>
+    <parameter name="logo" class="java.io.InputStream"/>
+    <parameter name="reportDate" class="java.util.Date"/>
+    <parameter name="footerNote" class="java.lang.String"/>
+    <field name="id" class="java.lang.Long"/>
+    <field name="name" class="java.lang.String"/>
+    <field name="city" class="java.lang.String"/>
+    <field name="salary" class="java.lang.Double"/>
+    <title height="100">
+        <element kind="rectangle" uuid="4b2b332c-470b-4607-86ce-5665d4a36209" mode="Opaque" x="0" y="0" width="555"
+                 height="100" backcolor="#F0F0F0">
+            <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+        </element>
+        <element kind="image" uuid="bd26d54c-7da2-4a9f-9f67-3f06089d82a7" x="10" y="10" width="70" height="70">
+            <expression><![CDATA[$P{logo}]]></expression>
+        </element>
+        <element kind="textField" uuid="2a6490b9-60e4-4393-9481-22ed5447eb9a" x="90" y="15" width="455" height="30"
+                 fontSize="20.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+            <expression><![CDATA[$P{companyName}]]></expression>
+        </element>
+        <element kind="textField" uuid="fb8e2603-a882-4725-b6f2-19f0b656e6ae" x="90" y="45" width="455" height="20"
+                 fontSize="14.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+            <expression><![CDATA[$P{header}]]></expression>
+        </element>
+    </title>
+    <columnHeader height="35">
+        <element kind="rectangle" uuid="4dd3cd64-4bcb-491e-a9a5-b173ff4ef89c" mode="Opaque" x="0" y="0" width="555"
+                 height="35" backcolor="#2C3E50">
+            <pen lineWidth="0.0"/>
+        </element>
+        <element kind="staticText" uuid="7a477d5f-84d3-45b9-9568-d21656a9e14f" x="0" y="0" width="50" height="35"
+                 forecolor="#FFFFFF" bold="true" hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[ID]]></text>
+        </element>
+        <element kind="staticText" uuid="666563f8-a7c6-466a-96dc-08b37a26f461" x="50" y="0" width="200" height="35"
+                 forecolor="#FFFFFF" bold="true" vTextAlign="Middle">
+            <text><![CDATA[Employee Name]]></text>
+        </element>
+    </columnHeader>
+    <detail>
+        <band height="25">
+            <element kind="textField" uuid="bf1ec622-93b4-48fb-9c60-c48460c2f200" x="0" y="0" width="50" height="25"
+                     hTextAlign="Center" vTextAlign="Middle">
+                <expression><![CDATA[$F{id}]]></expression>
+            </element>
+            <element kind="textField" uuid="b21c44a7-f597-41f7-ad82-7b6f37b8e518" x="50" y="0" width="200" height="25"
+                     vTextAlign="Middle">
+                <expression><![CDATA[$F{name}]]></expression>
+            </element>
+        </band>
+    </detail>
+</jasperReport>
