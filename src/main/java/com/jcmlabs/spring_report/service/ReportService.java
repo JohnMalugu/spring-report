@@ -33,7 +33,7 @@ public class ReportService {
     public void init() {
         // Pre-compile the report at startup
         try {
-            ClassPathResource reportResource = new ClassPathResource("reports/emp24.jrxml");
+            ClassPathResource reportResource = new ClassPathResource("templates/emp24.jrxml");
             try (InputStream inputStream = reportResource.getInputStream()) {
                 this.cachedJasperReport = JasperCompileManager.compileReport(inputStream);
             }
