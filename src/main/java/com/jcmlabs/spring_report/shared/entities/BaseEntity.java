@@ -33,4 +33,9 @@ public abstract class BaseEntity {
 
     @Column(name = "updated_by")
     private Long updatedBy;
+
+    @PreUpdate
+    void onUpdate() {
+        updatedAt = Instant.now();
+    }
 }
