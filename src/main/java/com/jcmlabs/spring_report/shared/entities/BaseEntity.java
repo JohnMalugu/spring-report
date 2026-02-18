@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -22,7 +23,7 @@ public abstract class BaseEntity {
     private String uuid = UUID.randomUUID().toString();
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    private Instant createdAt = Instant.now();
 
     @Column(name = "created_by")
     private Long createdBy;
