@@ -29,7 +29,7 @@ public abstract class BaseEntity {
     private Long createdBy;
 
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    private Instant updatedAt = Instant.now();
 
     @Column(name = "updated_by")
     private Long updatedBy;
