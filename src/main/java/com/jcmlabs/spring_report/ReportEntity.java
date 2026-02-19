@@ -21,7 +21,7 @@ import org.hibernate.annotations.SQLRestriction;
 @SQLDelete(sql = "UPDATE report SET deleted = true WHERE id = ?")
 @SQLRestriction("deleted = false")
 public class ReportEntity extends BaseEntity {
-    @Column
+    @Column(name = "test")
     private String test;
     private String description;
 }
