@@ -12,7 +12,6 @@ import org.hibernate.annotations.SoftDelete;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "employee")
-@SoftDelete
 public class Employee extends BaseEntity {
     private String name;
     private String city;
