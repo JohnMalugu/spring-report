@@ -22,8 +22,8 @@ import org.hibernate.annotations.SQLRestriction;
 @SQLRestriction("deleted = false")
 public class ReportEntity extends BaseEntity {
 
-    @Column(name = "test")
-    private String test;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "description")
     private String description;
