@@ -26,7 +26,7 @@ public class ReportService {
     private final EmployeeRepository employeeRepository;
     private final JasperReportsUtil jasperReportsUtil;
 
-    // Cache the compiled report to avoid recompiling on every request tt
+    // Cache the compiled report to avoid recompiling on every request
     private JasperReport cachedJasperReport;
 
     @PostConstruct

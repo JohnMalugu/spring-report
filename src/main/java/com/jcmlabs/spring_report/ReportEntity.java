@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 import org.hibernate.annotations.SoftDelete;
 
 @Entity
@@ -16,7 +18,8 @@ import org.hibernate.annotations.SoftDelete;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@SoftDelete
+@SQLDelete(sql = "UPDATE report SET deleted = true WHERE id = ?")
+@SQLRestriction("deleted = false")
 public class ReportEntity extends BaseEntity {
     private String test;
     private String description;
