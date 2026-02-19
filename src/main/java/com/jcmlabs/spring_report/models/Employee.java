@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 import org.hibernate.annotations.SoftDelete;
 
 @Getter
@@ -12,6 +14,8 @@ import org.hibernate.annotations.SoftDelete;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "employee")
+@SQLDelete(sql = "UPDATE report SET deleted = true WHERE id = ?")
+@SQLRestriction("deleted = false")
 public class Employee extends BaseEntity {
     private String name;
     private String city;
