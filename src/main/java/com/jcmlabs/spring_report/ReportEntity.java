@@ -23,5 +23,7 @@ import org.hibernate.annotations.SQLRestriction;
 public class ReportEntity extends BaseEntity {
     @Column(name = "test")
     private String test;
+
+    @Column(name = "description")
     private String description;
 }
