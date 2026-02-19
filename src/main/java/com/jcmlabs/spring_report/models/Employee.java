@@ -7,14 +7,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
-import org.hibernate.annotations.SoftDelete;
 
 @Getter
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "employee")
-@SQLDelete(sql = "UPDATE report SET deleted = true WHERE id = ?")
+@SQLDelete(sql = "UPDATE employee SET deleted = true WHERE id = ?")
 @SQLRestriction("deleted = false")
 public class Employee extends BaseEntity {
     private String name;
