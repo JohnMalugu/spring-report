@@ -6,6 +6,7 @@ public record ReportDto(
         @NotNull(message = "Name is required")
         String name,
 
+
         String description,
         String owner) {
 }
