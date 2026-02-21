@@ -22,7 +22,7 @@ import org.hibernate.annotations.SQLRestriction;
 @SQLRestriction("deleted = false")
 public class ReportEntity extends BaseEntity {
 
-    @Column(name = "name")
+    @Column(name = "name",unique = true)
     private String name;
 
     @Column(name = "description")
