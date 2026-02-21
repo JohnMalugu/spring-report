@@ -8,5 +8,6 @@ public record ReportDto(
 
         @NotNull(message = "description is required, can't be null")
         String description,
+        //owner shud be id, tutalink na user account
         String owner) {
 }
