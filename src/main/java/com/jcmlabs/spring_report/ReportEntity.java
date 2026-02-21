@@ -28,5 +28,6 @@ public class ReportEntity extends BaseEntity {
     @Column(name = "description")
     private String description;
 
+    @Column
     private String owner;
 }
