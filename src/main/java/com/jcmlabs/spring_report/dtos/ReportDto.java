@@ -1,4 +1,6 @@
 package com.jcmlabs.spring_report.dtos;
 
-public record ReportDto (){
+public record ReportDto (
+        String name
+){
 }
