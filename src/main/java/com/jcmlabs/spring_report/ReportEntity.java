@@ -25,7 +25,7 @@ public class ReportEntity extends BaseEntity {
     @Column(name = "name",unique = true)
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "description",columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "owner")
