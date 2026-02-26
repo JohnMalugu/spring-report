@@ -12,6 +12,5 @@ public record ReportDto(
         @Size(min = 50, max = 200)
         String description,
 
-        //owner shud be id, tutalink na user account, user is an entity (we will have multiple user types)
-        //we can add user id
+        //owner shud be id, tutalink na user account(multiple user roles)
         String owner) { }
