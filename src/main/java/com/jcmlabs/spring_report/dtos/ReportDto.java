@@ -9,5 +9,5 @@ public record ReportDto(
         @NotNull(message = "description is required, can't be null")
         String description,
 
-        //owner shud be id, tutalink na user account, user is an entity
+        //owner shud be id, tutalink na user account, user is an entity (we will have multiple user types)
         String owner) { }
