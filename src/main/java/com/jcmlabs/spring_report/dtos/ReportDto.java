@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Size;
 
 public record ReportDto(
         @NotNull(message = "Name is required")
-        @Size(min = 10, max = 50)
+        @Size(min = 5, max = 50)
         String name,
 
         @NotNull(message = "description is required, can't be null")
