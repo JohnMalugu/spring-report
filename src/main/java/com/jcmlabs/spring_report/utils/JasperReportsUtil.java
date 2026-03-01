@@ -36,7 +36,7 @@ public class JasperReportsUtil {
         SimpleXlsxReportConfiguration configuration = new SimpleXlsxReportConfiguration();
         configuration.setDetectCellType(true); // Keeps numbers as numbers, not text
         configuration.setCollapseRowSpan(false);
-        configuration.setWhitePageBackground(false); // Removes white background for printing
+        configuration.setWhitePageBackground(false); // Removes white background for printing(make sure you try)
         configuration.setRemoveEmptySpaceBetweenRows(true);
 
         exporter.setConfiguration(configuration);
