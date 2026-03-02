@@ -4,4 +4,6 @@ import com.jcmlabs.spring_report.shared.entities.BaseEntity;
 
 public class UserAccount extends BaseEntity {
     private String firstName;
+    private String middleName;
+    private String lastName;
 }
