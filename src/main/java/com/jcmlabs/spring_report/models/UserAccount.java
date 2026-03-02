@@ -10,7 +10,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class UserAccount extends BaseEntity {
     private String firstName;
     private String middleName;
