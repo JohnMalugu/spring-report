@@ -1,5 +1,6 @@
 package com.jcmlabs.spring_report.models;
 
+import com.jcmlabs.spring_report.enums.Gender;
 import com.jcmlabs.spring_report.shared.entities.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,4 +24,6 @@ public class UserAccount extends BaseEntity {
 
     @Column(name = "last_name")
     private String lastName;
+
+    private Gender gender;
 }
