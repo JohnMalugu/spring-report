@@ -25,5 +25,6 @@ public class UserAccount extends BaseEntity {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "gender")
     private Gender gender;
 }
