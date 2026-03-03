@@ -14,10 +14,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "users")
 public class UserAccount extends BaseEntity {
+
     @Column(name = "first_name")
     private String firstName;
 
     @Column(name = "middle_name")
     private String middleName;
+
     private String lastName;
 }
