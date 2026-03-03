@@ -17,7 +17,7 @@ public class UserAccount extends BaseEntity {
     @Column
     private String firstName;
 
-    @Column(name = "")
+    @Column(name = "middle_name")
     private String middleName;
     private String lastName;
 }
