@@ -2,9 +2,7 @@ package com.jcmlabs.spring_report.models;
 
 import com.jcmlabs.spring_report.enums.Gender;
 import com.jcmlabs.spring_report.shared.entities.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,5 +24,6 @@ public class UserAccount extends BaseEntity {
     private String lastName;
 
     @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 }
