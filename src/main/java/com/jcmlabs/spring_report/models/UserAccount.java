@@ -16,6 +16,7 @@ import lombok.Setter;
 public class UserAccount extends BaseEntity {
     @Column
     private String firstName;
+
     private String middleName;
     private String lastName;
 }
