@@ -33,6 +33,6 @@ public class UserAccount extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "dob")
-    private LocalDate dateOfBirth;
+    @Column(name = "date_of_birth")
+    private LocalDate dob;
 }
