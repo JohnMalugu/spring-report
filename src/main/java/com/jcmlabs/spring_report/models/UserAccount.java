@@ -20,16 +20,16 @@ import java.time.LocalDate;
 @SQLRestriction("deleted = false")
 public class UserAccount extends BaseEntity {
 
-    @Column(name = "first_name")
+    @Column
     private String firstName;
 
-    @Column(name = "middle_name")
+    @Column
     private String middleName;
 
-    @Column(name = "last_name")
+    @Column
     private String lastName;
 
-    @Column(name = "gender")
+    @Column
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
