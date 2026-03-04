@@ -9,6 +9,8 @@ import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
+import java.time.LocalDate;
+
 @Entity
 @Setter
 @AllArgsConstructor
@@ -31,4 +33,5 @@ public class UserAccount extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
+    private LocalDate dateOfBirth;
 }
