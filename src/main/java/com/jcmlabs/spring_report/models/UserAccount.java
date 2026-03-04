@@ -19,7 +19,6 @@ import java.time.LocalDate;
 @SQLDelete(sql = "UPDATE users SET deleted = true WHERE id = ?")
 @SQLRestriction("deleted = false")
 public class UserAccount extends BaseEntity {
-
     @Column
     private String firstName;
 
