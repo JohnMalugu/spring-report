@@ -26,4 +26,6 @@ public class UserAccount extends BaseEntity {
     @Column(name = "gender")
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    private int age;
 }
