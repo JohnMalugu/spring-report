@@ -6,12 +6,15 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
 
 @Entity
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
+@SQLDelete(sql = "UPDATE users SET deleted = true WHERE id = ?")
+
 public class UserAccount extends BaseEntity {
 
     @Column(name = "first_name")
