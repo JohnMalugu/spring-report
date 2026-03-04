@@ -31,6 +31,4 @@ public class UserAccount extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "age")
-    private int age;
 }
