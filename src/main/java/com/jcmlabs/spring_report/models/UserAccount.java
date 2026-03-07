@@ -35,5 +35,6 @@ public class UserAccount extends BaseEntity {
     @Column(name = "date_of_birth")
     private LocalDate dob;
 
+    @Column(name = "username")
     private String username;
 }
