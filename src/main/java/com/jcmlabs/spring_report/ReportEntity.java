@@ -27,8 +27,6 @@ public class ReportEntity extends BaseEntity {
     @Column(name = "description",columnDefinition = "TEXT")
     private String description;
 
-
-
     @ManyToOne
     @JoinColumn(name = "user_account_id")
     private UserAccount userAccount;
