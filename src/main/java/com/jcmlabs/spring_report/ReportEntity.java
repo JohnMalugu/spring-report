@@ -3,9 +3,7 @@ package com.jcmlabs.spring_report;
 import com.jcmlabs.spring_report.models.UserAccount;
 import com.jcmlabs.spring_report.shared.entities.BaseEntity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,5 +30,7 @@ public class ReportEntity extends BaseEntity {
     @Column(name = "owner")
     private String owner;
 
+    @ManyToOne
+    @JoinColumn(name = "user_account_id")
     private UserAccount userAccount;
 }
