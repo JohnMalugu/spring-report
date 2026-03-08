@@ -1,5 +1,6 @@
 package com.jcmlabs.spring_report;
 
+import com.jcmlabs.spring_report.models.UserAccount;
 import com.jcmlabs.spring_report.shared.entities.BaseEntity;
 
 import jakarta.persistence.Column;
@@ -30,4 +31,6 @@ public class ReportEntity extends BaseEntity {
 
     @Column(name = "owner")
     private String owner;
+
+    private UserAccount userAccount;
 }
